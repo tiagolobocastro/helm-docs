@@ -211,7 +211,7 @@ func getValuesTableTemplates() string {
 	valuesSectionBuilder.WriteString("| Key | Type | Default | Description |\n")
 	valuesSectionBuilder.WriteString("|-----|------|---------|-------------|\n")
 	valuesSectionBuilder.WriteString("  {{- range .Values }}")
-	valuesSectionBuilder.WriteString("\n| {{ .Key }} | {{ .Type }} | {{ if .Default }}{{ .Default }}{{ else }}{{ .AutoDefault }}{{ end }} | {{ if .Description }}{{ .Description }}{{ else }}{{ .AutoDescription }}{{ end }} |")
+	valuesSectionBuilder.WriteString("\n| {{ .Key }} | {{ if .Description }}{{ .Description }}{{ else }}{{ .AutoDescription }}{{ end }} | {{ .Type }} | {{ if .Default }}{{ .Default }}{{ else }}{{ .AutoDefault }}{{ end }} |")
 	valuesSectionBuilder.WriteString("  {{- end }}")
 	valuesSectionBuilder.WriteString("{{ end }}")
 
